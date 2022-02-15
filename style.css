@@ -9,37 +9,39 @@
     color: white;
     text-align: center;
 
-    height: 8vh;
+    height: 10vh;
 }
 
 .container{
-    height: 55vh;
+    height: 50vh;
     width: 5vw;
 
-    margin-top: 3vh;
+    margin-top: 2vh;
     color:black;
 }
 
-.tittle-wrapper{
+.tittle-wrapper span{
     margin-right: 35vw;
+    
 }
 
 .col-sm{
-    border: 1px solid black;
+    border: 3px solid black;
     background-color: white;
     border-radius: 3%;
     color: black;
 
     padding: 1vw;
+    padding-top: 1vh;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 
-    margin-top: 2vh;
+    margin-top: 1vh;
 
     height: 35vh;
-    width: 40vw;
+    width: 45vw;
 }
 
 input{
@@ -51,4 +53,15 @@ input{
 button{
     height:6vh;
     width: 15vw;
+}
+
+.table-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: black;
+
+    border: 1px solid black;
+    padding: 5vh;
 }

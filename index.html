@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="tittle-wrapper">
-            <h1>Products</h1>
+            <h2>Products</h2>
             <span>Products list:</span>
         </div>
         <div class="col-sm">
@@ -28,41 +28,44 @@
                 <input type="text">
             </div>
             <div class="buttons">
-                <button type="button" class="btn btn-success" onclick="produto.adicionar()">Adicionar</button>
-                <button type="button" class="btn btn-danger"  onclick="produto.excluir()">Excluir</button>
+                <button type="button" class="btn btn-success" onclick="produto.adicionar()">Add</button>
+                <button type="button" class="btn btn-danger"  onclick="produto.excluir()">Delete</button>
             </div>
         </div>
     </div>
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="table-wrapper">
+        <div class="col-sm">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
 
 
 <script src="./script.js"></script>
