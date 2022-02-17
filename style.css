@@ -1,67 +1,85 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.nav-bar{
-    background-color:blueviolet ;
+
+header{
+    background-color:#198754 ;
     color: white;
     text-align: center;
-
-    height: 10vh;
+    height: 12vh;
 }
 
-.container{
-    height: 50vh;
-    width: 5vw;
 
-    margin-top: 2vh;
-    color:black;
+.container{ 
+    position: relative;
+    right: 1vw;
+    
+    height: 88vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
-.tittle-wrapper span{
-    margin-right: 35vw;
+.form-wrapper{
+    height: 88vh;
+    margin-right: 10vw;
+    background-color: black;
+    border: 1px solid black;
+    width: 90%;
     
 }
 
-.col-sm{
-    border: 3px solid black;
+
+.form{
+    margin-top: 12vh;
+    margin-left: 5vw;
+
+    border: 1px solid black;
     background-color: white;
-    border-radius: 3%;
+    
+    height: 55vh;
+    width: 30vw;
+    
+    padding-top: 2vh;
+
     color: black;
-
-    padding: 1vw;
-    padding-top: 1vh;
-
+    border-radius: 30px;
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    align-items:center;
+    
+    
+    
+}
 
-    margin-top: 1vh;
+.form-wrapper .tittle-wrapper{
+    margin-right: 15vw;
+}
 
-    height: 35vh;
-    width: 45vw;
+.form-wrapper button{
+    
+    margin-bottom: 5vh;
+
+    height: vh;
+    width: 10vw;
 }
 
 input{
-    height:4vh;
-    width: 20vw;
     display: block;
+    width: 20vw;
 }
 
-button{
-    height:6vh;
-    width: 15vw;
+.container .table{
+    margin-bottom: 40vh;
+    margin-right: 5vw;
+    
 }
 
-.table-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    background-color: black;
-
-    border: 1px solid black;
-    padding: 5vh;
-}
