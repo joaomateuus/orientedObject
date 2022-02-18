@@ -22,14 +22,17 @@
                 </div>
                 <div class="col-sm">
                     <br>
-                    <label for="produto">Product</label>
-                    <input type="text">
+                    <label >Product</label>
+                    <input id="name" type="text">
                     
-                    <label for="valor">Value</label>
-                    <input type="text">
+                    <label >Value</label>
+                    <input id="value" type="text">
+
+                    <label >Category</label>
+                    <input id="category" type="text">
                     <br>
-                    <button type="button" class="btn btn-success" onclick="produto.adicionar()">Add</button>
-                    <button type="button" class="btn btn-danger"  onclick="produto.excluir()">Delete</button>
+                    <button type="button" class="btn btn-success" onclick="product.save()">Save</button>
+                    <button type="button" class="btn btn-danger"  onclick="product.clean()">Clear</button>
                 </div>
             </div>
         </div>
@@ -38,28 +41,28 @@
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Product</th>
+                <th scope="col">Value</th>
+                <th scope="col">Category</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody">
                 <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 </tr>
                 <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 </tr>
                 <tr>
                 <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td colspan="2"></td>
+                <td></td>
                 </tr>
             </tbody>
         </table>          
