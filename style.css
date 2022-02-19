@@ -14,38 +14,31 @@ header{
 }
 
 
-.container{ 
-    position: relative;
-    right: 1vw;
-    
-    height: 88vh;
-    min-width: 100vw;
+.container{    
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-
+    justify-content: center;
 }
 
-.form-wrapper{
-    height: 88vh;
-    margin-right: 10vw;
+.form-table-column{
+    width: 80vw;
     background-color: black;
     border: 1px solid black;
-    width: 90%;
     
 }
 
 
 .form{
-    margin-top: 6vh;
-    margin-left: 3vw;
+    height: 60vh;
+    width: 45vw;
 
     border: 1px solid black;
     background-color: white;
     
-    height: 55vh;
-    width: 30vw;
+    margin-top: 15vh;
+    margin-left: 16vw;
+    
     
     padding-top: 2vh;
 
@@ -60,17 +53,11 @@ header{
     
 }
 
-.form-wrapper .tittle-wrapper{
-    margin-right: 15vw;
-}
+.form button {
+    margin-top: 2vh;
+} 
 
-.form-wrapper button{
-    
-    margin-bottom: 5vh;
 
-    height: vh;
-    width: 10vw;
-}
 
 input{
     display: block;
@@ -79,7 +66,10 @@ input{
 
 
 
-.container .table{
+.container .table { 
+    
+    background-color: white;
+    margin-top: 10vh;
     margin-bottom: 30vh;
     margin-right: 8vw;
     

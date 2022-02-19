@@ -14,7 +14,7 @@
         <h1>Products Control</h1>
     </header>
     <div class="container">
-        <div class="form-wrapper">
+        <div class="form-table-column">
             <div class="form">
                 <div class="tittle-wrapper">
                     <h2>Products</h2>
@@ -35,22 +35,27 @@
                     <button type="button" class="btn btn-danger"  onclick="product.clean()">Clear</button>
                 </div>
             </div>
+            <table class="table" id="tbody">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Value</th>
+                    <th scope="col">Category</th>
+                    </tr>
+                </thead>
+                <tbody > 
+                </tbody>
+            </table>          
+        
+        
+        
+        
+        
         </div>
 
-        <table class="table" id="tbody">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Value</th>
-                <th scope="col">Category</th>
-                </tr>
-            </thead>
-            <tbody >
-               
-            </tbody>
-        </table>          
+       
+         
     </div>
 </body>
-
 </html>
