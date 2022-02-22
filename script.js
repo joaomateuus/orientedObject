@@ -75,6 +75,8 @@ class Product {
     //func that will run over our, catching values
     readTable() {
         let tbody = document.getElementById('tbody');
+        tbody.innerText = '';
+        
 
         for ( let i = 0; i < this.arrayProducts.length; i++ ) {
             //func to create new row as products are coming
@@ -85,12 +87,26 @@ class Product {
             let td_name = tr.insertCell();
             let td_value = tr.insertCell();
             let td_category = tr.insertCell();
+            let td_actions = tr.insertCell();
             
             //catching the array data
             td_id.innerText = this.arrayProducts[i].id;
             td_name.innerText = this.arrayProducts[i].name;
             td_value.innerText = this.arrayProducts[i].value;
             td_category.innerText = this.arrayProducts[i].category; 
+
+            let imgEdit = document.createElement('img');
+            imgEdit.src = 'img/edit.png'
+            td_actions.appendChild(imgEdit);
+            imgEdit.style.height = 20 + 'px';
+
+            let imgDelete = document.createElement('img');
+            imgDelete.src = 'img/delete.png'
+            td_actions.appendChild(imgDelete);
+            imgDelete.style.height= 20 + 'px';
+                        
+
+
         };
     } ;
 
