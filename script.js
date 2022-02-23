@@ -94,18 +94,20 @@ class Product {
             td_name.innerText = this.arrayProducts[i].name;
             td_value.innerText = this.arrayProducts[i].value;
             td_category.innerText = this.arrayProducts[i].category; 
-
+            //creating editing element w DOM
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/edit.png'
             td_actions.appendChild(imgEdit);
             imgEdit.style.height = 20 + 'px';
-
+            //setting a eventlistener in our editImage
+            imgEdit.setAttribute("onclick", "product.prepareEdit("+ JSON.stringify(this.arrayProducts[i]) +")");
+            //creating delete element w DOM
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.png'
             td_actions.appendChild(imgDelete);
             imgDelete.style.height= 20 + 'px';
-                        
-
+            //setting a evenlistener in the trashIcon
+            imgDelete.setAttribute("onclick", "product.delete("+ this.arrayProducts[i].id +")");
 
         };
     } ;
@@ -118,6 +120,30 @@ class Product {
        document.getElementById('value').value = '';
        document.getElementById('category').value = '';
     }
+
+    delete(id) {
+        if(confirm('Do you really want to delete this product ?' + id)){
+            let tbody = document.getElementById('tbody');
+
+            for(let i = 0; i < this.arrayProducts.length; i++){
+                if(this.arrayProducts[i].id == id) {
+                    this.arrayProducts.splice(i, 1);
+                    tbody.deleteRow(i);
+                }
+            }
+        }        
+    };
+
+    // func to prepare edit
+    prepareEdit(data) {
+        document.getElementById('name').value = data.name;
+        document.getElementById('value').value = data.value;
+        document.getElementById('category').value = data.category;
+
+        document.getElementById('btn1').innerText = 'Atualizar';
+    }
+
+
 };
 
 
