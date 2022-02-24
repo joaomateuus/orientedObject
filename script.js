@@ -8,6 +8,9 @@ class Product {
         this.id = 1;
         //array that will store the object with the product properties
         this.arrayProducts = [];
+        //this var is to check if the user is editing or adding a product
+        this.editId = null;
+        
     };
 
       //this func will get the value in inputFields
@@ -60,25 +63,34 @@ class Product {
         //if wont, will be displayed the message as set in the function
         if(this.fieldValidator(product)){
             this.add(product);
+
+            if(this.editId == null) {
+                this.add(product);
+            } else {
+                this.updateTable(this.editId, product);
+            }
             alert('Your product has been saved')
         }
+        
         this.readTable();
         this.clean();
     };
     
     // method that will store the object in the array
     add(product) {
+        product.value = parseFloat(product.value);
         this.arrayProducts.push(product);
         this.id++;
     }
+
     
     //func that will run over our, catching values
     readTable() {
         let tbody = document.getElementById('tbody');
-        tbody.innerText = '';
         
-
+        
         for ( let i = 0; i < this.arrayProducts.length; i++ ) {
+            tbody.innerText = '';
             //func to create new row as products are coming
             let tr = tbody.insertRow();
 
@@ -94,6 +106,7 @@ class Product {
             td_name.innerText = this.arrayProducts[i].name;
             td_value.innerText = this.arrayProducts[i].value;
             td_category.innerText = this.arrayProducts[i].category; 
+            
             //creating editing element w DOM
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/edit.png'
@@ -101,6 +114,7 @@ class Product {
             imgEdit.style.height = 20 + 'px';
             //setting a eventlistener in our editImage
             imgEdit.setAttribute("onclick", "product.prepareEdit("+ JSON.stringify(this.arrayProducts[i]) +")");
+            
             //creating delete element w DOM
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.png'
@@ -110,20 +124,23 @@ class Product {
             imgDelete.setAttribute("onclick", "product.delete("+ this.arrayProducts[i].id +")");
 
         };
-    } ;
-
-    
+        
+    };
 
     // it will clear the form fields
     clean() {
        document.getElementById('name').value = '';
        document.getElementById('value').value = '';
        document.getElementById('category').value = '';
+
+       document.getElementById('btn1').innerText = 'Save';
+       this.editId = null;
     }
 
     delete(id) {
         if(confirm('Do you really want to delete this product ?' + id)){
             let tbody = document.getElementById('tbody');
+            
 
             for(let i = 0; i < this.arrayProducts.length; i++){
                 if(this.arrayProducts[i].id == id) {
@@ -136,6 +153,8 @@ class Product {
 
     // func to prepare edit
     prepareEdit(data) {
+        this.editId = data.id;
+
         document.getElementById('name').value = data.name;
         document.getElementById('value').value = data.value;
         document.getElementById('category').value = data.category;
@@ -143,6 +162,16 @@ class Product {
         document.getElementById('btn1').innerText = 'Atualizar';
     }
 
+    updateTable(id, product) {
+        for(let i = 0; i < this.arrayProducts.length; i++) {
+            if(this.arrayProducts[i].id == id){
+                this.arrayProducts[i].name = product.name;
+                this.arrayProducts[i].value = product.value;
+                this.arrayProducts[i].category = product.category;
+            }
+        }
+    }
+    
 
 };
 
